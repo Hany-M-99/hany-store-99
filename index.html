@@ -3,115 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر محمود</title>
+    <title>هاني ستور - Hany Store</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Cairo', Tahoma, sans-serif;
-        }
-        body {
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
         }
-        /* الهيدر أو البانر العلوي */
         .header {
-            background: linear-gradient(135deg, #8b0000, #222);
-            color: white;
+            background-color: #222;
+            color: #fff;
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
         }
-        .header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        /* أزرار الفئات */
         .categories {
             display: flex;
             justify-content: center;
             gap: 10px;
             padding: 15px;
-            background: #fff;
+            background-color: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            overflow-x: auto;
         }
         .cat-btn {
-            background-color: #222;
-            color: white;
+            background-color: #f1f1f1;
             border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 20px;
             cursor: pointer;
-            font-size: 0.9rem;
-            white-space: nowrap;
+            border-radius: 5px;
+            font-weight: bold;
             transition: 0.3s;
         }
         .cat-btn:hover {
-            background-color: #8b0000;
+            background-color: #ff6600;
+            color: #fff;
         }
-        /* حاوية المنتجات */
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 15px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        /* كارد المنتج */
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        /* --- تنسيق قسم المنتجات --- */
+        .products-container {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+            flex-wrap: wrap;
         }
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-        .card-content {
+        .product-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
             padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        .card-category {
-            font-size: 0.85rem;
-            color: #007bff;
-            margin-bottom: 5px;
+        .product-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .product-price {
+            color: #ff6600;
             font-weight: bold;
-        }
-        .card-title {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #222;
-        }
-        .card-price {
             font-size: 1.2rem;
-            color: #28a745;
-            font-weight: bold;
             margin-bottom: 15px;
         }
-        .add-to-cart {
-            background-color: #111b2b;
+        .buy-btn {
+            background-color: #28a745;
             color: white;
             border: none;
-            width: 100%;
-            padding: 12px;
-            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 4px;
             cursor: pointer;
-            border-radius: 0 0 10px 10px;
-            transition: 0.3s;
+            font-weight: bold;
         }
-        .add-to-cart:hover {
-            background-color: #8b0000;
+        .buy-btn:hover {
+            background-color: #218838;
+        }
+        /* --- تنسيق قسم الفيديو الديني --- */
+        .video-section {
+            text-align: center;
+            padding: 25px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .video-section h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .video-section p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        .video-container video {
+            width: 100%;
+            border-radius: 6px;
+            outline: none;
         }
     </style>
 </head>
@@ -120,41 +109,56 @@
     <!-- البانر العلوي -->
     <div class="header">
         <h1>متجر هاني ستور</h1>
-        <p>متجرك الشامل لجميع أنواع الملابس، والأجهزة الإلكترونية،<br>وكل ما تحتاجه بأسعار منافسة وأفضل خدمة توصيل!<br>
-        <span style="font-size: 0.9rem; opacity: 0.8;">تحت إشراف هاني محمود عواد | 01067573766</span></p>
+        <p>متجرك الشامل لجميع أنواع الملابس، والأجهزة الإلكترونية</p>
+        <span style="font-size: 0.9rem; opacity: 0.8;">📞 01067573766 | 01094247457 تحت إشراف هاني محمود عواد</span>
     </div>
 
     <!-- أزرار الفئات -->
     <div class="categories">
         <button class="cat-btn">الكل</button>
-        <button class="cat-btn">ملابس رجالي وحريمي</button>
+        <button class="cat-btn">ملابس</button>
         <button class="cat-btn">أجهزة إلكترونية</button>
-        <button class="cat-btn">أجهزة فيب وسيجارة إلكترونية</button>
-        <button class="cat-btn">منتجات متنوعة</button>
+        <button class="cat-btn">فيديوهات تذكيرية</button>
     </div>
 
-    <!-- قائمة المنتجات -->
-    <div class="container">
-        <!-- منتج 1 -->
-        <div class="card">
-            <div class="card-content">
-                <div class="card-category">أجهزة إلكترونية وفيب</div>
-                <div class="card-title">شيشة الكترونية تحمل جميع انواع الاطعمة</div>
-                <div class="card-price">2,300 ج.م</div>
-            </div>
-            <button class="add-to-cart">أضف إلى السلة</button>
+    <!-- قسم المنتجات المعروضة -->
+    <div class="products-container">
+        
+        <!-- المنتج الأول: هدوم (ملابس رجالي) -->
+        <div class="product-card">
+            <h3>تيشيرت رجالي شيك</h3>
+            <div class="product-price">350 جنيه</div>
+            <button class="buy-btn">اطلب الان</button>
         </div>
 
-        <!-- منتج 2 -->
-        <div class="card">
-            <div class="card-content">
-                <div class="card-category">عروض مميزة</div>
-                <div class="card-title">مجموعة من الفيب عرض مش هيتكرر من شركة اولكس الحق قبل نفاذ الكمية</div>
-                <div class="card-price">3,600 ج.م</div>
-            </div>
-            <button class="add-to-cart">أضف إلى السلة</button>
+        <!-- المنتج الثاني: هدوم (عباية حريمي) -->
+        <div class="product-card">
+            <h3>عباية حريمي راقية</h3>
+            <div class="product-price">450 جنيه</div>
+            <button class="buy-btn">اطلب الان</button>
+        </div>
+
+    </div>
+
+    <!-- ================================================= -->
+    <!-- 📍 المنتج الثالث (قسم الفيديو الديني والتذكيري)  -->
+    <!-- ================================================= -->
+    <div class="video-section">
+        <h3>🌱 ركن التذكرة والدين</h3>
+        <p>فيديو قصير للتذكير بذكر الله وفضل الأعمال الصالحة</p>
+        
+        <div class="video-container">
+            <!-- 
+              ملاحظة يا فنان: عشان الفيديو يشتغل، سمي الفيديو الديني بتاعك 'video.mp4' 
+              وارفعه في نفس المستودع مع ملف index.html ده على جيت هب!
+            -->
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                متصفحك لا يدعم عرض الفيديو.
+            </video>
         </div>
     </div>
+    <!-- ================================================= -->
 
 </body>
 </html>
