@@ -3,101 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>هاني ستور - Hany Store</title>
+    <title>Hany-Store-99</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #007bff;
-            color: #333;
+            background-color: #0f1c14; /* خلفية عتمة ليلية متناسقة مع جو الصورة */
+            color: #e2e8f0;
         }
+        /* الشريط العلوي */
         .header {
-            background-color: #222;
+            background-color: #032820;
             color: #fff;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(3, 40, 32, 0.6);
+            border-bottom: 2px solid #5E7343;
         }
+        .header h1 {
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+            color: #C5C764;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #d1d5db;
+        }
+        .header .info {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            margin-top: 8px;
+            display: inline-block;
+            background: rgba(128, 164, 22, 0.2);
+            color: #C5C764;
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid #80A416;
+        }
+        /* أزرار الفئات والأقسام */
         .categories {
             display: flex;
             justify-content: center;
             gap: 10px;
             padding: 15px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,123,255,0.3);
+            background-color: #08652C;
+            box-shadow: 0 3px 12px rgba(8, 101, 44, 0.4);
+            flex-wrap: wrap;
         }
         .cat-btn {
-            background-color: #e3f2fd;
+            background-color: #5E7343;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 18px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: bold;
+            color: #ffffff;
             transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .cat-btn:hover {
-            background-color: #ff6600;
-            color: #fff;
+            background-color: #80A416;
+            color: #032820;
+            box-shadow: 0 4px 12px rgba(128, 164, 22, 0.6);
         }
-        /* --- تنسيق قسم المنتجات --- */
+        /* حاوية المنتجات الأربعة في سطر واحد */
         .products-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 30px;
+            gap: 15px;
+            padding: 30px 15px;
             flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .product-card {
-            background: #fff;
-            border: 1px solid #ddd;
+            background: #032820;
+            border: 1px solid #5E7343;
             border-radius: 8px;
-            width: 250px;
+            width: 220px;
             padding: 15px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(1,89,255,1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 22px rgba(128, 164, 22, 0.3);
+            border-color: #80A416;
         }
         .product-card h3 {
             margin: 10px 0;
-            color: #333;
+            color: #C5C764;
+            font-size: 1.1rem;
         }
         .product-price {
-            color: #ff6600;
+            color: #80A416;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 15px;
         }
         .buy-btn {
-            background-color: #17a2b8;
-            color: white;
+            background-color: #80A416;
+            color: #032820;
             border: none;
             padding: 8px 15px;
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
+            transition: 0.3s;
         }
         .buy-btn:hover {
-            background-color: #0056b3;
+            background-color: #C5C764;
+            box-shadow: 0 2px 8px rgba(197, 199, 100, 0.5);
         }
-        /* --- تنسيق قسم الفيديو الديني --- */
-        .video-section {
-            text-align: center;
-            padding: 25px;
-            background-color: #fff;
-            margin: 20px auto;
-            max-width: 700px;
+        /* شبكة الفيديوهات الأربعة (اثنين في كل صف) */
+        .videos-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .video-box {
+            background-color: #032820;
+            padding: 15px;
+            width: 440px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border: 1px solid #5E7343;
+            text-align: center;
+            transition: 0.3s;
         }
-        .video-section h3 {
-            color: #2c3e50;
+        .video-box:hover {
+            box-shadow: 0 6px 20px rgba(128, 164, 22, 0.3);
+            border-color: #80A416;
+        }
+        .video-box h3 {
+            color: #C5C764;
             margin-bottom: 5px;
+            font-size: 1rem;
         }
-        .video-section p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
+        .video-box p {
+            color: #AD9F3C;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
         }
-        .video-container video {
+        .video-box video {
             width: 100%;
             border-radius: 6px;
             outline: none;
@@ -108,9 +163,11 @@
 
     <!-- البانر العلوي -->
     <div class="header">
-        <h1>متجر هاني ستور</h1>
+        <h1>Hany-Store-99</h1>
         <p>متجرك الشامل لجميع أنواع الملابس، والأجهزة الإلكترونية</p>
-        <span style="font-size: 0.9rem; opacity: 0.8;">📞 01067573766 | 01094247457 تحت إشراف هاني محمود عواد</span>
+        <div class="info">
+            📞 01067573766 | ﴾ تحت إشراف هاني محمود عواد ﴿
+        </div>
     </div>
 
     <!-- أزرار الفئات -->
@@ -119,46 +176,86 @@
         <button class="cat-btn">ملابس</button>
         <button class="cat-btn">أجهزة إلكترونية</button>
         <button class="cat-btn">فيديوهات تذكيرية</button>
+        <button class="cat-btn">فيديوهات أفلام</button>
     </div>
 
-    <!-- قسم المنتجات المعروضة -->
+    <!-- قسم المنتجات (4 منتجات في سطر واحد) -->
     <div class="products-container">
         
-        <!-- المنتج الأول: هدوم (ملابس رجالي) -->
+        <!-- المنتج الأول (يمين) -->
+        <div class="product-card">
+            <h3>ساعة إلكترونية ذكية</h3>
+            <div class="product-price">250 جنيه</div>
+            <button class="buy-btn">اطلب الان</button>
+        </div>
+
+        <!-- المنتج الثاني -->
         <div class="product-card">
             <h3>تيشيرت رجالي شيك</h3>
             <div class="product-price">350 جنيه</div>
             <button class="buy-btn">اطلب الان</button>
         </div>
 
-        <!-- المنتج الثاني: هدوم (عباية حريمي) -->
+        <!-- المنتج الثالث -->
         <div class="product-card">
             <h3>عباية حريمي راقية</h3>
             <div class="product-price">450 جنيه</div>
             <button class="buy-btn">اطلب الان</button>
         </div>
 
+        <!-- المنتج الرابع (يسار) -->
+        <div class="product-card">
+            <h3>سماعة بلوتوث استريو</h3>
+            <div class="product-price">300 جنيه</div>
+            <button class="buy-btn">اطلب الان</button>
+        </div>
+
     </div>
 
-    <!-- ================================================= -->
-    <!-- 📍 المنتج الثالث (قسم الفيديو الديني والتذكيري)  -->
-    <!-- ================================================= -->
-    <div class="video-section">
-        <h3>🌱 ركن التذكرة والدين</h3>
-        <p>فيديو قصير للتذكير بذكر الله وفضل الأعمال الصالحة</p>
+    <!-- قسم الفيديوهات (4 فيديوهات مرتبة: 2 في كل صف) -->
+    <div class="videos-grid">
         
-        <div class="video-container">
-            <!-- 
-              ملاحظة يا فنان: عشان الفيديو يشتغل، سمي الفيديو الديني بتاعك 'video.mp4' 
-              وارفعه في نفس المستودع مع ملف index.html ده على جيت هب!
-            -->
+        <!-- الفيديو الأول -->
+        <div class="video-box">
+            <h3>🌱 ركن التذكرة والدين (1)</h3>
+            <p>فيديو قصير للتذكير بذكر الله</p>
             <video controls>
-                <source src="video.mp4" type="video/mp4">
+                <source src="video1.mp4" type="video/mp4">
                 متصفحك لا يدعم عرض الفيديو.
             </video>
         </div>
+
+        <!-- الفيديو الثاني -->
+        <div class="video-box">
+            <h3>🎬 لقطات ومقاطع مختارة (2)</h3>
+            <p>محتوى مرئي مميز ومنوع</p>
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+                متصفحك لا يدعم عرض الفيديو.
+            </video>
+        </div>
+
+        <!-- الفيديو الثالث -->
+        <div class="video-box">
+            <h3>💡 فيديوهات تذكيرية (3)</h3>
+            <p>مواعظ وفوائد طيبة</p>
+            <video controls>
+                <source src="video3.mp4" type="video/mp4">
+                متصفحك لا يدعم عرض الفيديو.
+            </video>
+        </div>
+
+        <!-- الفيديو الرابع -->
+        <div class="video-box">
+            <h3>🎥 مقاطع إضافية (4)</h3>
+            <p>عروض وروابط فيديو تشويقية</p>
+            <video controls>
+                <source src="video4.mp4" type="video/mp4">
+                متصفحك لا يدعم عرض الفيديو.
+            </video>
+        </div>
+
     </div>
-    <!-- ================================================= -->
 
 </body>
 </html>
